@@ -29,3 +29,10 @@ Help potty train your pet with this simple tracker.
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Credits
+[MDN Web Docs: Input radio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
+
+[MDN Web Docs: Form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+
+[MDN Web Docs: Fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+
+[MDN Web Docs: Input type submit](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)
