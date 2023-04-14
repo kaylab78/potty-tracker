@@ -22,6 +22,7 @@ Help potty train your pet with this simple tracker.
 - JavaScript
 
 ## Future Developments
+It would be great to have a visual of the pet's schedule.
 
 ## License
 © 2023 by [Kayla Backus](https://github.com/kaylab78)
