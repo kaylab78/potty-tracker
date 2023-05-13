@@ -12,7 +12,20 @@
         <h1>Potty Tracker</h1>
     </header>
     <main>
+        <!-- Potty Type Form - Free Entry -->
         <section>
+            <form id="potty-form">
+                <div>
+                    <input type="text" name="potty-type" placeholder="Enter Potty Type" />
+                </div>
+                <div>
+                    <button id="track-btn" type="submit">Track Potty</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Potty Type Form - Radio Buttons -->
+        <!-- <section>
             <form>
                 <fieldset>
                     <legend>Choose one</legend>
@@ -37,13 +50,15 @@
                         <label for="other">Other</label>
                     </div>
                     <div>
-                        <input type="submit" value="Track">
+                        <input type="submit" value="Track" id="track-btn">
                     </div>
                 </fieldset>
             </form>
-        </section>
-        <section>
+        </section> -->
 
+        <!-- Potty Output Section-->
+        <section>
+            <div id="potty-output"></div>
         </section>
     </main>
     <footer></footer>
