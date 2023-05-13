@@ -2,6 +2,16 @@
 
 // Variables
 
+const copyrightYear = document.querySelector("#copyright-year");
+
+function renderCopyright() {
+    const today = new Date();
+    const year = today.getFullYear();
+    copyrightYear.innerHTML = "<p>&copy; " + year + " Kayla Backus • <a href='https://github.com/kaylab78/potty-tracker' target='_blank'>Potty Tracker GitHub Repository</a></p>";
+};
+
+window.onload = renderCopyright();
+
 // When the page is fully loaded, load the previous potty entries
 
 // The user enters the description of the potty type
