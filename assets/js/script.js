@@ -1,6 +1,7 @@
 // When the user chooses a potty option and submits it, a new card shows up with the current date, the time of submission and the choice. If there is already a card for the day, the submitted choice shows up with the correct time. The cards are sorted by date newest to oldest.
 
 // Variables
+const currentTimeEl = document.querySelector("#current-time");
 const pottyInputEl = document.querySelector("#potty-input");
 const trackBtnEl = document.querySelector("#track-btn");
 const pottyOutputEl = document.querySelector("#potty-output");
@@ -16,12 +17,20 @@ function renderCopyright() {
 // When the window loads, the copyright information loads in the footer.
 window.onload = renderCopyright();
 
+
+function displayCurrentTime() {
+    currentTimeEl.textContent = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"});
+};
+
+window.onload = displayCurrentTime();
+
 trackBtnEl.addEventListener("click", displayPottyType);
 
 function displayPottyType(event) {
     event.preventDefault();
     let newPottyDiv = document.createElement("div");
     let pottyInput = pottyInputEl.value.trim();
+
     pottyOutputEl.appendChild(newPottyDiv);
     newPottyDiv.textContent = pottyInput;
     console.log(pottyInput);
