@@ -7,6 +7,12 @@ const trackBtnEl = document.querySelector("#track-btn");
 const pottyOutputEl = document.querySelector("#potty-output");
 const copyrightYear = document.querySelector("#copyright-year");
 
+// When the window loads, the copyright information loads in the footer and current date displays in the header.
+$(document).ready(function() {
+    renderCopyright();
+    displayCurrentTime();
+});
+
 // The copyright year changes based on the current year.
 function renderCopyright() {
     const today = new Date();
@@ -14,15 +20,10 @@ function renderCopyright() {
     copyrightYear.innerHTML = "<p>&copy; " + year + " Kayla Backus • <a href='https://github.com/kaylab78/potty-tracker' target='_blank'>Potty Tracker GitHub Repository</a></p>";
 };
 
-// When the window loads, the copyright information loads in the footer.
-window.onload = renderCopyright();
-
 // Current date
 function displayCurrentTime() {
     currentTimeEl.textContent = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"});
 };
-
-window.onload = displayCurrentTime();
 
 trackBtnEl.addEventListener("click", displayPottyType);
 
