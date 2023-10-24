@@ -1,16 +1,18 @@
 // When the user chooses a potty option and submits it, a new card shows up with the current date, the time of submission and the choice. If there is already a card for the day, the submitted choice shows up with the correct time. The cards are sorted by date newest to oldest.
 
 // Variables
-const currentTimeEl = document.querySelector("#current-time");
+const currentDateEl = document.querySelector("#current-date");
 const pottyInputEl = document.querySelector("#potty-input");
 const trackBtnEl = document.querySelector("#track-btn");
 const pottyOutputEl = document.querySelector("#potty-output");
 const copyrightYear = document.querySelector("#copyright-year");
+const timeEl = new Date().toLocaleString('en-us', {hour:"numeric", minute:"numeric"});
+const dateEl = new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"long", day:"numeric"});
 
 // When the window loads, the copyright information loads in the footer and current date displays in the header.
 $(document).ready(function() {
     renderCopyright();
-    displayCurrentTime();
+    displayCurrentDate();
 });
 
 // The copyright year changes based on the current year.
@@ -21,20 +23,27 @@ function renderCopyright() {
 };
 
 // Current date
-function displayCurrentTime() {
-    currentTimeEl.textContent = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"});
+function displayCurrentDate() {
+    currentDateEl.textContent = dateEl;
 };
 
+// When the Track Potty button is clicked, the potty type is entered.
 trackBtnEl.addEventListener("click", displayPottyType);
 
 function displayPottyType(event) {
     event.preventDefault();
     let newPottyDiv = document.createElement("div");
+    let newPottyH3 = document.createElement("h3");
+    let newPottyUl = document.createElement("ul");
+    let newPottyLi = document.createElement("li");
     let pottyInput = pottyInputEl.value.trim();
 
     pottyOutputEl.appendChild(newPottyDiv);
-    newPottyDiv.textContent = pottyInput;
-    console.log(pottyInput);
+    newPottyDiv.appendChild(newPottyH3);
+    newPottyH3.innerText = dateEl;
+    newPottyDiv.appendChild(newPottyUl);
+    newPottyUl.appendChild(newPottyLi);
+    newPottyUl.innerHTML = `<li>${timeEl} - ${pottyInput}</li>`
 };
 
 // When the page is fully loaded, load the previous potty entries
