@@ -30,6 +30,8 @@ It would be great to have a visual of the pet's schedule.
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Credits
+[jQuery CDN - Latest Stable Versions](https://releases.jquery.com/)
+
 [MDN Web Docs: Input radio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
 
 [MDN Web Docs: Form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)

@@ -17,7 +17,7 @@ function renderCopyright() {
 // When the window loads, the copyright information loads in the footer.
 window.onload = renderCopyright();
 
-
+// Current date
 function displayCurrentTime() {
     currentTimeEl.textContent = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"});
 };
